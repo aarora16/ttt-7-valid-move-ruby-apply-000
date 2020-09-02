@@ -1,6 +1,6 @@
 # code your #valid_move? method here
 def valid_move?(board, index)
-  if index > 0 && index < 8
+  if index >= 0 && index <= 8
     true
   else 
     false
@@ -10,21 +10,19 @@ end
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
 def position_taken?(board, index)
   case board[index]
-  when " "
-    true
-  when ""
-    true
-  when nil
-    true
-  when "X"
-    false
-  when "O"
-    false
+  when valid_move?(board, index)
+    if board[index] == " " || board[index] == "" || board[index] == nil
+      true
+    elsif board[index] == "X" || board[index] == "O"
+      false
+    else
+      true
+    end
   end
 end
 
 def execute
-  if position_taken? && valid_move?
+  if position_taken?(board_index) && valid_move?(board, index)
     true
   else
     false
