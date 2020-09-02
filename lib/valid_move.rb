@@ -22,7 +22,7 @@ def position_taken?(board, index)
 end
 
 def execute
-  if position_taken?board[index] && valid_move?board[index]
+  if position_taken?(board[index]) && valid_move?(board[index])
     true
   else
     false
