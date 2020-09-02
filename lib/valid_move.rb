@@ -21,10 +21,3 @@ def position_taken?(board, index)
   end
 end
 
-def execute
-  if position_taken?(board_index) && valid_move?(board, index)
-    true
-  else
-    false
-  end
-end
